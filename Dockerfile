@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
-LABEL version="Velociraptor v0.74.2"
+LABEL version="Velociraptor v0.74.5"
 LABEL description="Velociraptor server in a Docker container"
-LABEL maintainer="Wes Lambert, @therealwlambert"
+LABEL maintainer="graype28"
 COPY ./entrypoint .
 RUN chmod +x entrypoint && \
     apt-get update && \
@@ -10,7 +10,7 @@ RUN chmod +x entrypoint && \
     mkdir -p /opt/velociraptor && \
     for i in linux mac windows; do mkdir -p /opt/velociraptor/$i; done && \
     # Set Velociraptor version and base URL
-    VELO_VERSION="v0.74.2" && \
+    VELO_VERSION="v0.74.5" && \
     VELO_BASE_URL="v0.74" && \
     # Get Velociraptor binaries for specific version
     WINDOWS_EXE="https://github.com/Velocidex/velociraptor/releases/download/${VELO_BASE_URL}/velociraptor-${VELO_VERSION}-windows-amd64.exe" && \
