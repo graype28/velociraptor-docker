@@ -12,10 +12,11 @@ This repository is based on [weslambert/velociraptor-docker](https://github.com/
 - Ensure [docker-compose](https://docs.docker.com/compose/install/) is installed on the host
 - `git clone https://github.com/graype28/velociraptor-docker`
 - `cd velociraptor-docker`
-- Change credential values in `.env` as desired
+- Copy the example environment file: `cp .env.example .env`
+- Edit `.env` and change the default credentials and configuration as desired
 - `docker-compose up` (or `docker-compose up -d` for detached)
 - Access the Velociraptor GUI via https://\<hostip\>:8889 
-  - Default u/p is `admin/admin`
+  - Default u/p is `admin/password` (or whatever you set in `.env`)
   - This can be changed by running: 
   
   `docker exec -it velociraptor ./velociraptor --config server.config.yaml user add user1 user1 --role administrator`
