@@ -52,9 +52,35 @@ Set these in your `.env` file:
 - `VELOX_SERVER_URL`: Server URL for clients (default: https://localhost:8000/)
 - `VELOX_FRONTEND_HOSTNAME`: Frontend hostname (default: localhost)
 
+## Docker Hub Image
+
+The Docker image is available on Docker Hub:
+
+### Pull the latest version:
+```bash
+docker pull graype28/velociraptor:latest
+```
+
+### Pull a specific version:
+```bash
+docker pull graype28/velociraptor:0.74.5
+```
+
+### Use in docker-compose.yaml:
+Instead of building locally, you can use the pre-built image by uncommenting and modifying the image line:
+```yaml
+services:
+  velociraptor:
+    image: graype28/velociraptor:0.74.5
+    # build:
+    #   context: ./
+    #   dockerfile: Dockerfile
+```
+
 ## Recent Updates (August 2025)
 
 - Updated to Velociraptor v0.74.5 (from v0.74.2)
 - Fixed download URLs for latest release format
 - Updated Docker Compose to version 3.8
+- Published Docker image to Docker Hub
 - Verified compatibility with latest Velociraptor features
